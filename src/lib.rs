@@ -182,16 +182,21 @@ mod test {
     use void;
     #[test]
     fn it_works() {
-        let l = super::List;
-        for i in &*l {
-            void::unreachable(*i);
+        for i in super::List {
+            void::unreachable(i);
         }
     }
     #[test]
-    fn it_works_safe() {
+    fn it_works_2() {
         let l = super::List;
         for _ in &*l {
             panic!();
+        }
+    }
+    #[test]
+    fn it_works_iterator() {
+        for i in super::Iter {
+            void::unreachable(i);
         }
     }
     #[test]
