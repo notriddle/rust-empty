@@ -1,0 +1,7 @@
+[package]
+name = "empty"
+version = "0.0.1"
+authors = ["Michael Howell <michael@notriddle.com>"]
+
+[dependencies]
+void = "0.0.5"
