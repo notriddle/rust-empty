@@ -2,6 +2,10 @@
 name = "empty"
 version = "0.0.1"
 authors = ["Michael Howell <michael@notriddle.com>"]
+description = "The empty list and iterator"
+documentation = "https://www.notriddle.com/rustdoc/empty/index.html"
+repository = "https://github.com/notriddle/rust-empty"
+license = "WTFPL"
 
 [dependencies]
 void = "0.0.5"
