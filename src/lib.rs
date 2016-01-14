@@ -12,12 +12,12 @@ use std::ops::{Deref, DerefMut, Index, IndexMut};
 use std::slice;
 
 /// Generate a empty slice from nothing.
-pub fn slice<T>() -> &'static [T] {
+pub fn slice<'a, T: 'a>() -> &'a [T] {
     unsafe { slice::from_raw_parts(0x1 as *const T, 0) }
 }
 
 /// Generate a empty slice from nothing.
-pub fn slice_mut<T>() -> &'static mut [T] {
+pub fn slice_mut<'a, T: 'a>() -> &'a mut [T] {
     unsafe { slice::from_raw_parts_mut(0x1 as *mut T, 0) }
 }
 
