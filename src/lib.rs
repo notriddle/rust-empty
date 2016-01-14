@@ -1,9 +1,5 @@
 // Copyright © 2015 Michael Howell <michael@notriddle.com>
-// This work is free. It comes without any warranty, to the extent permitted
-// by applicable law. You can redistribute it and/or modify it under the terms
-// of the Do What The Fuck You Want To Public License, Version 2, as published
-// by Sam Hocevar. See the COPYING file, or <http://www.wtfpl.net/> for
-// more details.
+// This library is released under the same terms as Rust itself.
 
 //! Empty collection and iterator.
 
@@ -14,6 +10,16 @@ use std::hash::{Hash, Hasher};
 use std::iter::FromIterator;
 use std::ops::{Deref, DerefMut, Index, IndexMut};
 use std::slice;
+
+/// Generate a empty slice from nothing.
+pub fn slice<T>() -> &'static [T] {
+    unsafe { slice::from_raw_parts(0x1 as *const T, 0) }
+}
+
+/// Generate a empty slice from nothing.
+pub fn slice_mut<T>() -> &'static mut [T] {
+    unsafe { slice::from_raw_parts_mut(0x1 as *mut T, 0) }
+}
 
 /// A collection that is empty at creation and cannot be modified.
 #[derive(Copy, Clone, Debug, PartialEq, Eq, PartialOrd, Ord, Default)]
